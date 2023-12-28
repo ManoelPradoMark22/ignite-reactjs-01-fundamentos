@@ -23,3 +23,16 @@ export function Post() {
 // no arquivo , onde vai importar:
 import { Post } from './Post';
 */
+
+_________________________
+
+
+css modules documentation:
+https://github.com/css-modules/css-modules
+
+por exemplo, se vc quer q um componente tenha uma estilização única e nao interfira nas demais
+ - crie o arquivo de estilização com o sufixo: .module.css   , por exemplo: Header.module.css
+ - procure utilizar somente classes - no React é className (evite usar outros tipos de selecao, como ids)
+
+O Vite já traz o suporte para o css modules:
+https://vitejs.dev/guide/features#css-modules
