@@ -9,4 +9,8 @@ export function Post(props) {
   )
 }
 
+Post.propTypes = {
+  author: PropTypes.string,
+  content: PropTypes.string,
+}
 
