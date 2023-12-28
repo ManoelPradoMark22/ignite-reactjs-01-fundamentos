@@ -36,3 +36,55 @@ por exemplo, se vc quer q um componente tenha uma estilização única e nao int
 
 O Vite já traz o suporte para o css modules:
 https://vitejs.dev/guide/features#css-modules
+
+_________________________
+
+ --- box model css ---
+box-sizing: border-box; -> faz com que o padding, margin e o border do elemento
+nunca aumentem sua largura/altura, e sim espremam o elemento para dentro
+
+_________________________
+
+default-color-palette
+https://tailwindcss.com/docs/customizing-colors#default-color-palette
+
+
+_________________________
+
+
+Importando fonts do Google:
+https://fonts.google.com/specimen/Roboto
+
+gera o codigo de importacao:
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+os links de preconnect é recomendavel deixar no tomo, logo abaixo do <meta...
+
+<head>
+    <meta charset="UTF-8" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+_________________________
+
+no body (nos nav q usam o webkit, para deixar a font mais fininha):
+-webkit-font-smoothing: antialiased;
+
+_________________________
+
+por padrao, os elem input, textarea, buton  NAO HERDAM A FONT DO BODY!
+body, input, textarea, buton {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+sempre utilize unidades de medida relativa (como o rem)
+1rem -> utiliza 1 unidade relativa do tamanho padrao do HTML, q é 16px
+1rem -> 16px (caso o usuario nao aumente ou diminua pelo sistema)
+
+usar para tamanho de fontes, botoes, espaçamentos - assim, nossa interface aumenta/dimunui de forma padrao / totalitaria
