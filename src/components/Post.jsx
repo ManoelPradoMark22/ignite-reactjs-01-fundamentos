@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 import { Avatar } from './Avatar';
+import { Comment } from './Comment';
 
 import styles from './Post.module.css';
 
@@ -41,6 +42,12 @@ export function Post(props) {
           <button type='submit'>Publicar</button>
         </footer>
       </form>
+
+      <div className={styles.commentList}>
+        <Comment />
+        <Comment />
+        <Comment />
+      </div>
     </article>
   )
 }
