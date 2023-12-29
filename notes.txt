@@ -209,3 +209,39 @@ ou podemos colocar o display block em cada um:
 }
 
 focus-within -> se houver um focus em qualquer elemento dentro do .commentForm, quero aplicar alguma esitlização no footer
+
+
+_________________________
+
+.comment {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.commentBox {
+  flex: 1;
+}
+
+em .comment, temos o commentBox e o Avatar.
+como no pai (.comment) temos o display flex, o flex 1 atribuido em commentBox (filho) faz com q ele estique o maximo possivel o restnate do espaco
+
+----------------------
+
+.commentContent header button {
+  background: transparent;
+  border: 0;
+  color: var(--gray-400);
+  cursor: pointer;
+
+  line-height: 0;
+}
+line-height: o no button faz com que a borda do botao fique bem colada com o icone (va apertando TAB e vc vai notar)
+
+------------
+
+.commentBox footer button span::before {
+  content: "\2022";
+  padding: 0 0.25rem;
+}
+::before   ->  dentro do span , antes dele (mas dentro do span) estou inerindo aquela bolinha/simboldo do html 
