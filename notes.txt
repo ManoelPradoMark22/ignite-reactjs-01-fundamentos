@@ -88,3 +88,26 @@ sempre utilize unidades de medida relativa (como o rem)
 1rem -> 16px (caso o usuario nao aumente ou diminua pelo sistema)
 
 usar para tamanho de fontes, botoes, espaçamentos - assim, nossa interface aumenta/dimunui de forma padrao / totalitaria
+
+----------
+
+ margin: 2rem auto;  -> o auto faz com q fique centralizdo - como ali esta na parte horizontal, centaliza na horizontal
+
+----------
+  estilizando a side-bar (esquerda) e o main (direita)
+  display: grid;
+  grid-template-columns: 256px 1fr;
+     256px (a primeira parte do grid vai ter o tamanho fixo de 256px)
+     1fr (a segunda partee do grid vai ter o tamanho fléxivel, alcançando o tamanho maximo possivel)
+  gap: 2rem; -> espaçamento entre as colunas
+  align-items: flex-start; -> as colunas sempre ficam alinhados para o TOPO! pois se nao colocarmos assim, o padrao (stretch) seria tentar esticar os dois para baixo q ambos tenham o mesmo tamanho
+
+  no display grid, é valido dar um inspecionar elemento no chrome, e ir no grid (vc pode testar os diferentes align itens)
+
+_________________________
+
+object-fit: cover; -> nao vai distorcer a imagem. ela vai caber na div um pedaco, vai ser recortada
+
+-------------------------
+
+qnd usa display: block; NAO PRECISA DO WIDHT 100%, POIS JA APLICA AUTOMATICAMENTE!
