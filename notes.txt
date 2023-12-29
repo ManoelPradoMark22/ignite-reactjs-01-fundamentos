@@ -111,3 +111,54 @@ object-fit: cover; -> nao vai distorcer a imagem. ela vai caber na div um pedaco
 -------------------------
 
 qnd usa display: block; NAO PRECISA DO WIDHT 100%, POIS JA APLICA AUTOMATICAMENTE!
+
+-------------------
+
+box-sizing: initial  -> qnd adicionamos bordas, padding, outline etc , vai fazer com que ocupe um espaço a mais, e nao comprima o conteúdo para dentro
+
+.avatar {
+  box-sizing: initial;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+  border: 4px solid var(--gray-800);
+  outline: 2px solid var(--green-500);
+}
+
+outra forma é usando cálculos no css!
+.avatar {
+  width: calc(3rem + 12px);
+  height: calc(3rem + 12px);
+  border-radius: 8px;
+  border: 4px solid var(--gray-800);
+  outline: 2px solid var(--green-500);
+}
+4px esquerda e direita = 8px + 
+2 px esq e direita  = 4px
+  = 12px
+
+
+---------------------
+
+margin-top: calc(0px - 1.5rem - 6px)  COMO eu quero negativo, eu inicio 0px e subtraio em seguida
+  - como eu quero centralizar na vertical, eu divido por dois os espaços extras q foram somados abaixo
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: calc(0px - 1.5rem - 6px)  //ESSE AQUI
+}
+
+.avatar {
+  width: calc(3rem + 12px);
+  height: calc(3rem + 12px);
+  border-radius: 8px;
+  border: 4px solid var(--gray-800);
+  outline: 2px solid var(--green-500);
+}
+
+
+_________________________
+line-height: 1.6;  -> 160%
