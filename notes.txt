@@ -195,3 +195,17 @@ ou podemos colocar o display block em cada um:
 .authorInfo span {
   display: block;
 }
+
+---------------------------
+
+.commentForm footer {
+  visibility: hidden;
+  max-height: 0;
+}
+
+.commentForm:focus-within footer{
+  visibility: visible;
+  max-height: none;
+}
+
+focus-within -> se houver um focus em qualquer elemento dentro do .commentForm, quero aplicar alguma esitlização no footer
