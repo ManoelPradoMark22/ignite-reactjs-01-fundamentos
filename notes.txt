@@ -162,3 +162,36 @@ margin-top: calc(0px - 1.5rem - 6px)  COMO eu quero negativo, eu inicio 0px e su
 
 _________________________
 line-height: 1.6;  -> 160%
+
+
+-----------------------------
+
+.post + .post {
+  margin-top: 2rem;
+}
+quero estilizar APENAS OS post tenham um post ANTES dele!! - por exemplo, se temos 2: o primeiro nao recebe, mas o ultimo recebe
+
+
+_________________________
+
+.post > header {
+
+}  o sinal de > ali informa que a estilização vai ser aplicada apenas para o 1º nivel interno do header em post (se tivermos outros headers em niveis mais internos, nao herdara a estilizacao)
+
+------------------------
+
+para ficar um abaixo do outro podemos fazer assim:
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+
+ou podemos colocar o display block em cada um:
+.authorInfo strong {
+  display: block;
+}
+
+.authorInfo span {
+  display: block;
+}
