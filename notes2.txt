@@ -100,4 +100,11 @@ Mas, em comentarios, quando temos a lista de comentarios dentro de um componente
               key={comment.date}
               content={comment.content}
             />
-//UTILIZE UMA KEY UNICA (POR EXEMPLO, UMA KEY VINDA DIRETAMENTE DO BACKEND, Q É UNICA) - aqui usei a data
+//UTILIZE UMA KEY UNICA (POR EXEMPLO, UMA KEY VINDA DIRETAMENTE DO BACKEND, Q É UNICA - tipo um ID) - aqui usei a data
+
+______________
+
+IMUTABILIDADE:
+as variáveis nao sofrem mutação. nós criamos um novo valor (um novo espaço na memória) /e nao atualizamos o valor
+Permite sermos mais performáticos!!! criar um novo valor na memória e comparamos este novo valor com o anterior (para checar o q mudou ou nao mudou)
+

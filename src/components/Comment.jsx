@@ -10,7 +10,7 @@ import { dates } from '../support/util/dates';
 export function Comment({ content, date, onDeleteComment }) {
 
   function handleDeleComment() {
-    onDeleteComment(content)
+    onDeleteComment(date)
   }
 
   const {

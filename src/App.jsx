@@ -6,7 +6,7 @@ import styles from './App.module.css';
 
 import './global.css';
 
-import { posts } from './data/posts';
+import { posts } from './support/data/posts';
 
 export function App() {
 
