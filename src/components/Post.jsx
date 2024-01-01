@@ -89,7 +89,7 @@ Post.propTypes = {
     name: PropTypes.string,
     role: PropTypes.string,
   }),
-  content: PropTypes.string,
-  publishedAt: PropTypes.dateTime,
+  content: PropTypes.array,
+  publishedAt: PropTypes.instanceOf(Date),
 }
 
