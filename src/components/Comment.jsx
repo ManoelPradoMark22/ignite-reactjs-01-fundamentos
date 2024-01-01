@@ -44,7 +44,9 @@ export function Comment({ content, date, onDeleteComment }) {
             </button>
           </header>
 
-          <p>{content}</p>
+          <div className={styles.contentDiv}>
+            <p>{content}</p>
+          </div>
         </div>
 
         <footer>

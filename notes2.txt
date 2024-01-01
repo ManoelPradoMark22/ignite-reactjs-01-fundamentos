@@ -108,3 +108,25 @@ IMUTABILIDADE:
 as variáveis nao sofrem mutação. nós criamos um novo valor (um novo espaço na memória) /e nao atualizamos o valor
 Permite sermos mais performáticos!!! criar um novo valor na memória e comparamos este novo valor com o anterior (para checar o q mudou ou nao mudou)
 
+___________________________
+
+setCustomValidity  -> TEXTAREA
+
+  function handleNewCommentChange(event) {
+    ->   event.target.setCustomValidity('');
+    setNewCommentText(event.target.value)
+  }
+ 
+  function handleNewCommentInvalid(event){
+      ->   event.target.setCustomValidity("Esse campo é obrigatório!")
+  }
+
+
+          <textarea
+            placeholder='Deixe um comentário'
+            value={newCommentText}
+            onChange={handleNewCommentChange}
+            onInvalid={handleNewCommentInvalid} //this
+            required  //this
+          />
+Daí deixamos o text area obritorio, e alteramos a mensagem de required para uma mensagem personalizada!
