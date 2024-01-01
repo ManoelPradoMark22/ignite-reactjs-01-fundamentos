@@ -28,3 +28,24 @@
   1. The oven needs to be at 180°;
   2. When the oven is hot, I can put the dough to bake;
   3. When the dough is ready, I can remove it from the oven.
+
+  Declarative
+    const [comments, setComments] = useState([
+      "Maravilha!!"
+    ]);
+    const [newCommentText, setNewCommentText] = useState('');
+    ..................
+    function handleCreateNewComment() {    
+      setComments([...comments, newCommentText]);
+      setNewCommentText('');
+    }
+
+    function handleNewCommentChange(event) {
+      setNewCommentText(event.target.value)
+    }
+    ..................
+    <textarea
+      placeholder='Deixe um comentário'
+      onChange={handleNewCommentChange}
+      value={newCommentText}
+    />
