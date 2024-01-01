@@ -1,7 +1,7 @@
-/* eslint-disable react/jsx-key */
 import PropTypes from 'prop-types';
 import { format, formatDistanceToNow } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR'
+
 import { useState } from 'react';
 
 import { Avatar } from './Avatar';
@@ -10,7 +10,10 @@ import { Comment } from './Comment';
 import styles from './Post.module.css';
 export function Post({ author, publishedAt, content }) {
   const [comments, setComments] = useState([
-    "Maravilha!!"
+    {
+      content: 'Maravilha!!',
+      date: new Date('2023-12-28 00:20')
+    }
   ]);
   const [newCommentText, setNewCommentText] = useState('');
 
@@ -26,7 +29,14 @@ export function Post({ author, publishedAt, content }) {
   function handleCreateNewComment(event) {    
     event.preventDefault();
 
-    setComments([...comments, newCommentText]);
+    const newObjectComment = {
+      content: newCommentText,
+      date: new Date()
+    }
+    
+    setComments([
+      ...comments,
+      newObjectComment]);
     setNewCommentText('');
   }
 
@@ -53,10 +63,10 @@ export function Post({ author, publishedAt, content }) {
       <div className={styles.content}>
         {content.map(line => {
           if(line.type === 'link') {
-            return <p><a href="#">{line.content}</a></p>
+            return <p key={line.content}><a href="#">{line.content}</a></p>
           }
 
-          return <p>{line.content}</p>
+          return <p key={line.content}>{line.content}</p>
         })}
       </div>
 
@@ -76,7 +86,12 @@ export function Post({ author, publishedAt, content }) {
 
       <div className={styles.commentList}>
         {comments.map(comment => {
-          return <Comment content={comment}/>
+          return (
+            <Comment 
+              key={comment.date}
+              content={comment.content}
+            />
+          )
         })}
       </div>
     </article>

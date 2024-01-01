@@ -49,3 +49,55 @@
       onChange={handleNewCommentChange}
       value={newCommentText}
     />
+
+
+    __________________________
+
+
+    
+Why unique?
+Three moments when a component re-renders in React.
+  1. When the status changes;
+  2. When component's props changes;
+  3. When a parent component re-renders;
+
+Daí a importancia de termos as keys únicas!!! pois o react vai checando o novo estado, com o estado antigo e comparando as chaves de antes com as que mudaram:
+
+1, 2, 3, 4
+
+|  |  |  |  n
+v  v  v  v  e
+            w
+1, 2, 3, 4, 5  
+            daí, vai renderizar novamente apenas o novo (5)
+
+Porque nao é indicado usarmos o index do array como key?
+const posts = [1,2,3,4,5]
+// indexs -> 0,1,2,3,4
+
+imagine q por algum motivo trocamos de posicao dois intens
+posts = [1,2,5,4,3]  -> assim, o react vai renderizar novamente (mas, os indexs nao mudaram de posicao!!)
+daí, nós so trocamos de posicao, mas o react vai entender que mudou tudom, entao vai renderizar tudo de novo
+
+ - e por isso nao podemos usar algum numero gerado aleatoriamente (pois a cada refresh teremos outro valor aleatorio - temos que ter a key unica e imutavel)
+
+ A KEY PRECISA SER ÚNICA NA RENDERIZAÇÃO DE CADA COMPONENTE
+    - POR EXEMPLO, PARA CADA post (DENTRO DO CONTEXTO DO COMPONENT EM ESPECÍFICO)
+        POST 1 -> KEY CONTEUDO  - componente 1
+        POST 2 -> KEY CONTEUDO  - componente 2
+        conteudo 1 e conteudo 2 podem ser iguais, pois os contextos dos componentes sao diferentes!!
+    <p key={line.content}><a href="#">{line.content}</a></p>
+
+--
+Mas, em comentarios, quando temos a lista de comentarios dentro de um componente pai POST, ai cada comentario deve ter, obrigatoriamente, uma key ÚNICA!!!
+            <Comment 
+              key={comment}
+              content={comment}
+            /> 
+//NAO RECOMENDADO, pois pode ter comentários iguais!!
+
+            <Comment 
+              key={comment.date}
+              content={comment.content}
+            />
+//UTILIZE UMA KEY UNICA (POR EXEMPLO, UMA KEY VINDA DIRETAMENTE DO BACKEND, Q É UNICA) - aqui usei a data
