@@ -6,7 +6,12 @@ import { HandsClapping } from '@phosphor-icons/react';
 
 import { Avatar } from './Avatar'
 
-export function Comment({content}) {
+export function Comment({ content, onDeleteComment }) {
+
+  function handleDeleComment() {
+    onDeleteComment(content)
+  }
+
   return (
     <div className={styles.comment}>
       <Avatar 
@@ -22,7 +27,10 @@ export function Comment({content}) {
                 <time title='11 de Maio às 08:13h' dateTime='2022-05-11 08:13:30'>Cerca de 1h atrás</time>
             </div>
 
-            <button title='Deletar comentário'>
+            <button 
+              onClick={handleDeleComment}
+              title='Deletar comentário'>
+              
               <Trash size={24} />
             </button>
           </header>
@@ -43,4 +51,5 @@ export function Comment({content}) {
 
 Comment.propTypes = {
   content: PropTypes.string,
+  onDeleteComment: PropTypes.func
 }
