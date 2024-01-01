@@ -4,7 +4,7 @@
   padding: 0 1rem;
 
   display: grid;
-  grid-template-columns: 256px 1fr;
+  grid-template-columns: 256px calc(100% - 256px);
   gap: 2rem;
   align-items: flex-start;
 }
@@ -15,6 +15,6 @@
   }
   
   .wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
   }
 }

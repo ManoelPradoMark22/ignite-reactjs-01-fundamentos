@@ -6,6 +6,7 @@
 
 .commentBox {
   flex: 1;
+  max-width: calc(100% - 4.375rem);
 }
 
 .commentContent {
@@ -45,6 +46,10 @@
 
 .commentContent header button:hover {
   color: var(--red-500);
+}
+
+.commentContent .contentDiv {
+  word-wrap: break-word;
 }
 
 .commentContent p {

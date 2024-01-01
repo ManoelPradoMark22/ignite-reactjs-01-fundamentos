@@ -8,7 +8,7 @@ export function posts() {
         role: 'Custom Software Engineering Associate'
       },
       content: [
-        { type: 'paragraph', content: 'Fala galeraa 👋' },
+        { type: 'paragraph', content: 'Fala galeraa 👋FalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFalaFala' },
         { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. 🚀' },
         { type: 'link', content: '👉https://github.com/ManoelPradoMark22' },
         { type: 'link', content: '#novoprojetoIgnite' },
