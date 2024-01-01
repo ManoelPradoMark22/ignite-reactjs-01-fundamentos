@@ -4,13 +4,20 @@ import styles from './Comment.module.css'
 import { Trash } from '@phosphor-icons/react';
 import { HandsClapping } from '@phosphor-icons/react';
 
-import { Avatar } from './Avatar'
+import { Avatar } from './Avatar';
+import { dates } from '../support/util/dates';
 
-export function Comment({ content, onDeleteComment }) {
+export function Comment({ content, date, onDeleteComment }) {
 
   function handleDeleComment() {
     onDeleteComment(content)
   }
+
+  const {
+    publishedDateFormatted,
+    publishedRelativeDateToNow,
+    dateTime
+  } = dates(date);
 
   return (
     <div className={styles.comment}>
@@ -24,7 +31,9 @@ export function Comment({ content, onDeleteComment }) {
           <header>
             <div className={styles.authorAndTime}>
                 <strong>Diego Fernandes</strong>
-                <time title='11 de Maio às 08:13h' dateTime='2022-05-11 08:13:30'>Cerca de 1h atrás</time>
+                <time title={publishedDateFormatted} dateTime={dateTime}>
+                  {publishedRelativeDateToNow}
+                </time>
             </div>
 
             <button 
@@ -51,5 +60,6 @@ export function Comment({ content, onDeleteComment }) {
 
 Comment.propTypes = {
   content: PropTypes.string,
+  date: PropTypes.instanceOf(Date),
   onDeleteComment: PropTypes.func
 }

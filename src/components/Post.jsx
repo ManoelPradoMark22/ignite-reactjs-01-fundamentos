@@ -1,6 +1,4 @@
 import PropTypes from 'prop-types';
-import { format, formatDistanceToNow } from 'date-fns';
-import ptBR from 'date-fns/locale/pt-BR'
 
 import { useState } from 'react';
 
@@ -8,6 +6,8 @@ import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 
 import styles from './Post.module.css';
+
+import { dates } from '../support/util/dates';
 export function Post({ author, publishedAt, content }) {
   const [comments, setComments] = useState([
     {
@@ -17,14 +17,11 @@ export function Post({ author, publishedAt, content }) {
   ]);
   const [newCommentText, setNewCommentText] = useState('');
 
-  const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
-    locale: ptBR,
-  });
-
-  const publishedRelativeDateToNow = formatDistanceToNow(publishedAt, {
-    locale: ptBR,
-    addSuffix: true
-  });
+  const {
+    publishedDateFormatted,
+    publishedRelativeDateToNow,
+    dateTime
+  } = dates(publishedAt);
 
   function handleCreateNewComment(event) {    
     event.preventDefault();
@@ -60,7 +57,7 @@ export function Post({ author, publishedAt, content }) {
           </div>
         </div>
 
-        <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>
+        <time title={publishedDateFormatted} dateTime={dateTime}>
           {publishedRelativeDateToNow}
         </time>
       </header>
@@ -95,6 +92,7 @@ export function Post({ author, publishedAt, content }) {
             <Comment 
               key={comment.date}
               content={comment.content}
+              date={comment.date}
               onDeleteComment={deleteComment}
             />
           )
