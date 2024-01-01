@@ -11,3 +11,20 @@
 
 
   Lib date-fns: https://date-fns.org/
+  
+  ______________
+
+  # Imperative programming
+  What should be done (step-by-step).
+  ## Cake recipe
+  1. Turn on the oven at 180°;
+  2. Open the oven door;
+  3. Place the dough in a mold;
+  3. Place the mold with the dough inside the oven;
+  
+  # Declarative programming
+  What are the conditions for me to have the final result?
+  ## Cake recipe
+  1. The oven needs to be at 180°;
+  2. When the oven is hot, I can put the dough to bake;
+  3. When the dough is ready, I can remove it from the oven.
