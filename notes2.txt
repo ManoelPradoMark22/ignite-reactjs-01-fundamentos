@@ -1,0 +1,13 @@
+  const publishedDateFormatted = new Intl.DateTimeFormat('pt-BR', {
+    day: '2-digit',
+    month: 'long',
+    hour: '2-digit',
+    minute: '2-digit'
+  }).format(publishedAt)
+
+  result: 13 de outubro às 22:22
+
+  ______________
+
+
+  Lib date-fns: https://date-fns.org/

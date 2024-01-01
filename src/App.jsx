@@ -6,6 +6,8 @@ import styles from './App.module.css';
 
 import './global.css';
 
+import { posts } from './data/posts';
+
 export function App() {
 
   return (
@@ -15,14 +17,16 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar/>
         <main>
-          <Post 
-            author="Manoel Prado"
-            content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo pariatur repellat delectus quam tempora adipisci, expedita hic! Ex maiores beatae provident, eaque molestiae cumque nobis unde fuga aliquid tempore eos!"
-          />
-          <Post 
-            author="Anna Paula"
-            content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo pariatur repellat delectus quam tempora adipisci, expedita hic! Ex maiores beatae provident, eaque molestiae cumque nobis unde fuga aliquid tempore eos!"
-          />
+          {posts().map(post => {
+            return (
+              <Post
+                key={post.id}
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}
+              />
+            )
+          })}
         </main>
       </div>
     </div>
