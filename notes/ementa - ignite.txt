@@ -1,0 +1,39 @@
+1. FUNDAMENTOS
+1.1 - Iniciando com React.js (6h03min)
+Uma app React utilizando o Vite e aprenderemos sobre os conceitos mais importantes do React, entre eles estão componentização, propriedades, estados, imutabilidade e hooks, além de aplicar o TypeScript no nosso projeto para adicionar tipagem estática à aplicação.
+1.2 - Praticando Conceitos | DESAFIO: Vc vai reforçar os conceitos mais importantes do ReactJS e aprender ainda mais conceitos que serão utilizados em todas as aplicações que você for desenvolver no futuro.
+1.3 - Conceitos e fundamentos do ReactJS
+
+2. Aprofundando em Hooks
+2.1 - Criando SPAs com ReactJS (6h53min)
+Uma app completa com roteamento e diversos conceitos importantes do ecossistema React como ContextAPI, useReducer, immer e muito mais.
+2.2 - Coffee Delivery | DESAFIO: Entrar ainda mais fundo em funcionalidades do React, e dessa vez adicionando também mais regras para praticar ainda mais o uso do ReactJS.
+2.3 - SPA & Context
+
+3. HTTP e Performance
+3.1 - Consumo de API e performance no ReactJS (3h41min)
+Uma app front-end web completa, conectando a uma API e veremos como performar aplicações com o React entendendo como funcionam os algoritmos internos da biblioteca e todo fluxo de renderização de componentes.
+3.1 - Github Blog | DESAFIO: Praticar a utilização de clientes HTTP consumindo a API do Github para criar um blog pessoal.
+3.2 - API & Performance
+
+4. Integrando Frontend - Backend (2h 48min)
+4.1 - Pizza Shop | Exercitar tanto os conceitos que vimos sobre o React, quanto a comunicação com APIs via requisições HTTP. Também iremos apresentar os testes em aplicação frontend. Portanto, iremos desenvolver uma aplicação de gerenciamento de uma pizzaria (dashboard de administrador) utilizando Vite, React Router DOM, React Hook Form, shadcn/ui, React Query, Vitest e mais!
+
+5. Primeiro framework
+5.1 - Fundamentos do Next.js (4h17min)
+Um projeto completo com o framework Next.js. Vamos utilizar StitchesJS, passando por conceitos de SPA, server-side rendering (SSR) e static-site generation (SSG).
+5.2 - Adicionando features ao Ignite Shop | DESAFIO: Implementar um carrinho no nosso projeto, com a opção de adicionar e remover os itens antes de prosseguir ao checkout.
+5.3 - Next.js e Stitches
+
+6. Design System
+6.1 - Design System (4h44min)
+Construir um Design System, entender como documentar os componentes do React e descobrir diversas ferramentas que vão nos ajudar desde a implementação do Design System até sua publicação, como Storybook, changesets e muito mais.
+6.2 - Adicionando mais componentes do Design System |  DESAFIO: Add mais alguns componentes ao design system que já desenvolvemos em aula.
+
+7. Aprofundando em Next.js
+7.1 - Ignite Call (10h25min)
+Uma app completa até o deploy. Abordaremos rotas autenticadas no Next.js, integração com Google Calendar, validações e muito mais!
+7.2 - Criando uma aplicação Fullstack | DESAFIO: Desenvolver uma aplicação completa para avaliar os mais diversos livros.
+7.3 - Next.js e Banco de dados
+
+8. CERTIFICADO DE ESPECIALISTA EM REACTJS - CERTIFICADO FINAL
