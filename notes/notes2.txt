@@ -160,5 +160,46 @@ CORRECT (PASSANDO A FUNCAO):
               <Trash size={24} />
             </button>
 
+__________________________
 
-        
+UNDERSTANDING CLOSURES IN REACT:
+
+WHEN WE UPDATE A STATE AND RIGHT AFTER WE NEED TO UPDATE AGAIN (IN THE SAME CONTEXT) WITH THE NEW VALUE OF THIS STATE, THAN, WE WILL FOLLOW THE STEPS:
+
+ -- WRONG:
+  function handleLikeComment() {
+    setLikeCount(likeCount + 1);
+
+    setLikeCount(likeCount + 1);
+  }
+
+  -- CORRECT:
+    function handleLikeComment() {
+    setLikeCount((state) => {
+      return state + 1
+    });
+    //others operations
+    setLikeCount((state) => {
+      return state + 1
+    });
+  }//ali, o 'state' (pode ser qualquer nome) do parametro da funcao, é o valor mais recente do estado
+
+
+
+WHEN WE UPDATE A STATE AND RIGHT AFTER WE NEED TO USE (show) THE NEW VALUE OF THIS STATE, THAN, WE WILL FOLLOW THE STEPS:
+
+ -- WRONG:
+  function handleLikeComment() {
+    setLikeCount(likeCount + 1);
+
+    console.log(likeCount);
+  }
+
+  -- CORRECT:
+  function handleLikeComment() {
+    const newValue = likeCount + 1;
+
+    setLikeCount(newValue);
+
+    console.log(newValue);
+  }
