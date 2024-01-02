@@ -130,3 +130,35 @@ setCustomValidity  -> TEXTAREA
             required  //this
           />
 Daí deixamos o text area obritorio, e alteramos a mensagem de required para uma mensagem personalizada!
+
+
+__________________________
+WRONG (PASSANDO A EXECUCAO DA FUNCAO): 
+
+            <button 
+              onClick={handleDeleComment()}
+              title='Deletar comentário'>
+              
+              <Trash size={24} />
+            </button>
+
+CORRECT (PASSANDO A FUNCAO):
+
+            <button 
+              onClick={handleDeleComment}
+              title='Deletar comentário'>
+              
+              <Trash size={24} />
+            </button>
+
+CORRECT (PASSANDO A FUNCAO):
+
+            <button 
+              onClick={() => handleDeleComment()}
+              title='Deletar comentário'>
+              
+              <Trash size={24} />
+            </button>
+
+
+        

@@ -6,11 +6,17 @@ import { HandsClapping } from '@phosphor-icons/react';
 
 import { Avatar } from './Avatar';
 import { dates } from '../support/util/dates';
+import { useState } from 'react';
 
 export function Comment({ content, date, onDeleteComment }) {
+  const [likeCount, setLikeCount] = useState(0);
 
   function handleDeleComment() {
     onDeleteComment(date)
+  }
+
+  function handleLikeComment() {
+    setLikeCount(likeCount + 1);
   }
 
   const {
@@ -50,9 +56,9 @@ export function Comment({ content, date, onDeleteComment }) {
         </div>
 
         <footer>
-          <button>
+          <button onClick={handleLikeComment}>
             <HandsClapping/>
-            Aplaudir <span>20</span>
+            Aplaudir <span>{likeCount}</span>
           </button>
         </footer>
       </div>
